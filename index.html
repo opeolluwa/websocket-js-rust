@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore eum perspiciatis fuga dolorem sint neque
+        officia dolor molestias, unde, consequatur aperiam rerum corrupti ab veritatis explicabo quia ipsum voluptas
+        sunt!
+    </p>
+    <script type="module">
+        import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+        const socket = io("http://localhost:3000");
+        // client-side
+        socket.on("connect", () => {
+            console.log(socket.id); // x8WIv7-mJelg7on_ALbx
+        });
+
+        socket.on("disconnect", () => {
+            console.log(socket.id); // undefined
+        });
+    </script>
+</body>
+
+</html>
